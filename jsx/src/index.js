@@ -1,4 +1,5 @@
 // babeljs.io/repl : To see transpiled JSX code
+// https://jsx-notes.vercel.app/ : cheatsheet for JSX
 
 // 1) Import the React and the ReatctDOM libraries
 import React from 'react';
