@@ -20,16 +20,19 @@ function App() {
     1) compute values we want to show in our JSX
     2) returns the content we want this component to show
   - Props/Properties are similar to attribute on HTML elements, that customizes JSX elements
-    - Props can refer to a variable using curly brace syntax
   - Prop values:
     - String values must be in double quotes ""
-    - Number, lists, object values must be in curly braces {}
+    - Number, boolean, lists, object values must be in curly braces {}
+    - Props can refer to a variable using curly brace syntax
+  - Names/values of HTML elements are slightly different when writing JSX
+    1) All prop names follow camelCase
+    2) Number attributes use curly braces
+    3) Boolean 'true' is the default value, and can be written with just the prop name. 'false' should be written explicitly with curly braces.
+    4) The 'class' attribute is written as 'className'
+    5) In-line styles are provided as objects
   */
 
-  const inputType = 'number';
-  const minValue = 5;
-
-  return <input style={{ border: '3px solid red' }} type="number" min={5} />;
+  return <textarea autoFocus={true} />;
 }
 
 // 5) Show the component on screen
