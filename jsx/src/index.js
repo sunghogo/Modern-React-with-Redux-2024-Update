@@ -8,12 +8,9 @@ const root = ReactDOM.createRoot(el);
 
 function App() {
   // React cannot properly print out bool, null, undefined, arrays, and objects
-  let message = 'Bye there!';
-  if (Math.random() > 0.5) {
-    message = 'Hello There!';
-  }
+  // React can evaluates expressions in JSX
 
-  return <h1>{message}</h1>;
+  return <h1>{new Date().toLocaleDateString()}</h1>;
 }
 
 root.render(<App />);
