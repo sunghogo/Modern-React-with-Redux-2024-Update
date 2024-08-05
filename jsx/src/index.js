@@ -19,16 +19,17 @@ function App() {
   - Component Layout typically has code to: 
     1) compute values we want to show in our JSX
     2) returns the content we want this component to show
+  - Props/Properties are similar to attribute on HTML elements, that customizes JSX elements
+    - Props can refer to a variable using curly brace syntax
+  - Prop values:
+    - String values must be in double quotes ""
+    - Number, lists, object values must be in curly braces {}
   */
 
-  const name = 'Samantha';
-  const age = 23;
+  const inputType = 'number';
+  const minValue = 5;
 
-  return (
-    <h1>
-      Hi, my name is {name} and my age is {age}
-    </h1>
-  );
+  return <input style={{ border: '3px solid red' }} type="number" min={5} />;
 }
 
 // 5) Show the component on screen
