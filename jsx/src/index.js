@@ -25,14 +25,23 @@ function App() {
     - Number, boolean, lists, object values must be in curly braces {}
     - Props can refer to a variable using curly brace syntax
   - Names/values of HTML elements are slightly different when writing JSX
-    1) All prop names follow camelCase
-    2) Number attributes use curly braces
-    3) Boolean 'true' is the default value, and can be written with just the prop name. 'false' should be written explicitly with curly braces.
-    4) The 'class' attribute is written as 'className'
-    5) In-line styles are provided as objects
+    1) All prop names follow camelCase (of their HTML/CSS counterpart)
+    2) Number attributes use curly braces (vs. string in HTML)
+    3) Boolean 'true' is the default value, and can be written with just the prop name. 'false' should be assigned explicitly with curly braces.
+    4) The 'class' attribute is written as 'className' (since JS has class keyword)
+    5) In-line styles are provided as objects to "style" prop
   */
 
-  return <textarea autoFocus={true} />;
+  return (
+    <input
+      spellCheck
+      style={{
+        border: '1px solid blue',
+        textDecoration: 'none',
+        paddingTop: '5px',
+      }}
+    />
+  );
 }
 
 // 5) Show the component on screen
