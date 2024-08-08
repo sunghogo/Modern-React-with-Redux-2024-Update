@@ -1,4 +1,4 @@
-function ProfileCard({ title, handle, image }) {
+function ProfileCard({ title, handle, image, description }) {
   // Destructure objects in code OR directly in arguments since props object is always passed
 
   return (
@@ -11,9 +11,10 @@ function ProfileCard({ title, handle, image }) {
 
       <div className="card-content">
         <div className="media-content">
-          <div className="title is-4">Title is {title}</div>
-          <div className="subtitle is-6">Handle is {handle}</div>
+          <div className="title is-4">{title}</div>
+          <div className="subtitle is-6">{handle}</div>
         </div>
+        <div className="content">{description}</div>
       </div>
     </div>
   );
