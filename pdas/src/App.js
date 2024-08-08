@@ -1,4 +1,9 @@
 import ProfileCard from './ProfileCard';
+import AlexaImage from './images/alexa.png';
+import CortanaImage from './images/cortana.png';
+import SiriImage from './images/siri.png';
+
+// Images/files less than 9.7kB, gets inlined as b64, otherwise gets treated as a separate file (browser handles both the same)
 
 function App() {
   return (
