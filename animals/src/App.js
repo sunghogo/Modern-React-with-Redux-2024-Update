@@ -12,6 +12,17 @@ function App() {
 
     - Event Documentation:
       reactjs.org/docs/events.html
+
+    - State:
+      - Data that change as user interacts with our app
+      - When this data changes, React will update content on the screen automatically
+        - This is the ONLY WAY to change content React shows
+
+    - State System:
+      1) Define a piece of state with the useState React function
+      2) Pass default/initial value to useState()
+      3) Use state in some way in our component (often in returned JSX)
+      4) When user does something (event), update the state, causing React to rerender the component
     
     - 
   */
