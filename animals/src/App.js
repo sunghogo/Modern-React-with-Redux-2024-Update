@@ -10,15 +10,19 @@ function App() {
 
     - Event Documentation:
       reactjs.org/docs/events.html
+    
+    - 
   */
 
-  const handleClick = () => {
-    console.log('Button was clicked!');
-  };
+  // const handleClick = () => {
+  //   console.log('Button was clicked!');
+  // };
 
   return (
     <div>
-      <button onClick={handleClick}>Add Animal</button>
+      <button onClick={() => console.log('Button was clicked!')}>
+        Add Animal
+      </button>
     </div>
   );
 }
