@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 function App() {
   /*
-    - Event System (user input) uand State System (updates to pages)
+    - Event System (detect user input) and State System (update content on screen)
     - Using Events:
       1) Decide what kind of event
       2) Create event handler/callback function
-      3) Name the function using handle + EventNAme
+      3) Name the function using handle + EventName
       4) Pass handler function as a prop to a plain element (Don't call it!)
       5) Use valid prop event name ('onClick', 'onChange', 'onMouseOver', etc.)
 
@@ -23,8 +23,6 @@ function App() {
       2) Pass default/initial value to useState()
       3) Use state in some way in our component (often in returned JSX)
       4) When user does something (event), update the state, causing React to rerender the component
-    
-    - 
   */
 
   const [count, setCount] = useState(0);
