@@ -1,3 +1,5 @@
+import './ImageShow.css';
+
 function ImageShow({ image }) {
   return (
     <div>

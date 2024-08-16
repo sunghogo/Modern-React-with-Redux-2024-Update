@@ -25,7 +25,7 @@
             - Use index of the record (will lead to bugs when you update the list)
             - Generate a unique ID yourself
 */
-
+import './ImageList.css';
 import ImageShow from './ImageShow';
 
 function ImageList({ images }) {
@@ -33,7 +33,7 @@ function ImageList({ images }) {
     return <ImageShow key={image.id} image={image} />;
   });
 
-  return <div>{renderedImages}</div>;
+  return <div className="image-list">{renderedImages}</div>;
 }
 
 export default ImageList;

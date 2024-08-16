@@ -28,7 +28,7 @@
             - Can easily read and update the input through state
             - Component re-renders with every keypress - super easy to add in more add in more advanced features now
 */
-
+import './SearchBar.css';
 import { useState } from 'react';
 
 function SearchBar({ onSubmit }) {
@@ -46,8 +46,9 @@ function SearchBar({ onSubmit }) {
   };
 
   return (
-    <div>
+    <div className="search-bar">
       <form onSubmit={handleFormSubmit}>
+        <label>Enter Search Term</label>
         <input value={term} onChange={handleChange} />
       </form>
     </div>
