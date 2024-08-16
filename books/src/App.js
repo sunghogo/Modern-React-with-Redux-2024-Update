@@ -6,7 +6,8 @@
             2) Copy all elements from old array
             3) Add new element to the end
             4) Set the sate to new array
-        - AVOID MUTATING STATES that are existing arrays or elements/objects or properties
+        - AVOID MUTATING STATES THAT ARE MEMORY BASED
+            - That means DO NOT MODIFY state arrays or elements AND state objects or properties
 
     State Update Cheatsheet: https://state-updates.vercel.app/
 */
