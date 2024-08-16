@@ -11,8 +11,24 @@
         3) When the 'onChange' event fires, get the value from the input
         4) Take that value from the input (using event.target.value) and use it to update your state
         5) Pass your state to the input as the 'value' prop
+            - value prop forces the text inside the input to the specifed value
             - An error will occur the first time due to Hot Reload (update code in browser without completely refreshing the page), will go away after refreshing and its ok
+
+    But Why?:
+        - Normal Browser Behavior:
+            1) User types in input
+            2) Browser updates the text in the input
+            3) Browser triggers event to say input was updated
+        - Additional React Behavior:
+            4) We read the value from the input event, and update state
+            5) State update! Component rerenders
+            6) We provide 'value' prop to input, so React changes the input's value (to what the user typed in)
+            7) loop again
+        - Why? 
+            - Can easily read and update the input through state
+            - Component re-renders with every keypress - super easy to add in more add in more advanced features now
 */
+
 import { useState } from 'react';
 
 function SearchBar({ onSubmit }) {
