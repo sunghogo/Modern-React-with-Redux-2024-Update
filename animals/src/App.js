@@ -1,5 +1,10 @@
 import { useState } from 'react';
 
+function getRandomAnimal() {
+  const animals = ['bird', 'cat', 'cow', 'dog', 'gator', 'horse'];
+  return animals[Math.floor(Math.random() * animals.length)];
+}
+
 function App() {
   /*
     - Event System (detect user input) and State System (update content on screen)
@@ -28,15 +33,14 @@ function App() {
       - State and setting function is initialized with the default value the first time component is rendered
       - When setter function is called, React will know state has been changed and (almost) immediately re-renders/executes the component with the new state
   */
+  const [animals, setAnimals] = useState([]);
 
-  const [count, setCount] = useState(0);
-
-  const handleClick = () => setCount(count + 1);
+  const handleClick = () => setAnimals([...animals, getRandomAnimal()]);
 
   return (
     <div>
       <button onClick={handleClick}>Add Animal</button>
-      <div>Number of animals: {count}</div>
+      <div>{animals}</div>
     </div>
   );
 }
