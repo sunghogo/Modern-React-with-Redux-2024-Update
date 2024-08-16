@@ -25,8 +25,9 @@
             6) We provide 'value' prop to input, so React changes the input's value (to what the user typed in)
             7) loop again
         - Why? 
-            - Can easily read and update the input through state
-            - Component re-renders with every keypress - super easy to add in more add in more advanced features now
+            - Manage inputs as "controlled inputs" using state system
+                - Can easily read and update the input through state
+                - Component re-renders with every keypress - super easy to add in more add in more advanced features now
 */
 import './SearchBar.css';
 import { useState } from 'react';
