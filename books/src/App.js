@@ -1,11 +1,14 @@
 /*
     React Rendering with Arrays:
-        - If state point to the same array/object.memory, React is optimized to assume no rerender is required!
+        - If state point to the same array/object (in memory), React is optimized to assume no rerender is required!
         - To fix this:
             1) Create a new array
             2) Copy all elements from old array
             3) Add new element to the end
             4) Set the sate to new array
+        - AVOID MUTATING STATES that are existing arrays or elements/objects or properties
+
+    State Update Cheatsheet: https://state-updates.vercel.app/
 */
 
 import { useState } from 'react';
