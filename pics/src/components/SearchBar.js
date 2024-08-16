@@ -1,21 +1,37 @@
 /*
-  Form behavior:
+  Form Behavior and Inputs:
       - Automatically sends input data to homeUrl?input1Name=enteredData1&input2Name=enteredData2&etc..
         - Input data can be pass by pressing Enter key or an included form button
       - Pass the event argument in handler function and call event.preventDefault(); to prevent this behavior
+      - NEVER try to get a value out of an input using a querySelector() or similar
+    
+    Handling Text Inputs:
+        1) Create a new piece of state
+        2) Createa n event handle to watch for the 'onChange' event
+        3) When the 'onChange' event fires, get the value from the input
+        4) Take that value from the input (using event.target.value) and use it to update your state
+        5) Pass your state to the input as the 'value' prop
+            - An error will occur the first time due to Hot Reload (update code in browser without completely refreshing the page), will go away after refreshing and its ok
 */
+import { useState } from 'react';
 
 function SearchBar({ onSubmit }) {
+  const [term, setTerm] = useState('');
+
   const handleFormSubmit = (event) => {
     event.preventDefault();
 
     onSubmit('cars');
   };
 
+  const handleChange = (event) => {
+    setTerm(event.target.value);
+  };
+
   return (
     <div>
       <form onSubmit={handleFormSubmit}>
-        <input />
+        <input value={term} onChange={handleChange} />
       </form>
     </div>
   );
