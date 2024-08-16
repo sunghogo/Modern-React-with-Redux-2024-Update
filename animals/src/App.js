@@ -23,6 +23,10 @@ function App() {
       2) Pass default/initial value to useState()
       3) Use state in some way in our component (often in returned JSX)
       4) When user does something (event), update the state, causing React to rerender the component
+
+    - Re-Rendering Process
+      - State and setting function is initialized with the default value the first time component is rendered
+      - When setter function is called, React will know state has been changed and (almost) immediately re-renders/executes the component with the new state
   */
 
   const [count, setCount] = useState(0);
