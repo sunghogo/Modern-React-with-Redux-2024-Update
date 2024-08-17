@@ -44,15 +44,25 @@
             - Often a good idea to put into context
         - Component/Local State: Data that is used by very FEW components
             - Can keep as props
+
+    Hooks:
+        - Functions that add additional features to a component (given by React library itself):
+            - useState: Allows a component to use the state system
+            - useEffect: Allows a component to run code at specific points in time
+            - useContext: Allows a component to access values stored in context
+
+    Custom Hooks:
+        - Functions we write to make reusable bits of logic (can do little or a lot)
+        - Usually reuses basic hooks
 */
 
-import { useEffect, useContext } from 'react';
-import BooksContext from './context/books';
+import { useEffect } from 'react';
 import BookCreate from './components/BookCreate';
 import BookList from './components/BookList';
+import useBooksContext from './hooks/use-books-context';
 
 function App() {
-  const { fetchBooks } = useContext(BooksContext);
+  const { fetchBooks } = useBooksContext();
 
   useEffect(() => {
     fetchBooks();
