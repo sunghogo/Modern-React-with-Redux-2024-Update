@@ -34,64 +34,35 @@
             3) 'Consume' the data in a component
                 - Import useContext from React and also the Context Object from Step 1
                 - Call useContext(ContextObject)
+
+    Context and States:
+        - Define a custom Provider function containing the {children} prop in the context file that initializes and returns the Context.Provider JSX containing {children}, and passes an object containing the state and handler functions to the value prop 
+            - Can consume the state and functions using object destructuring
+
+    Application State vs Component State:
+        - Application State: Data that used by MANY different components
+            - Often a good idea to put into context
+        - Component/Local State: Data that is used by very FEW components
+            - Can keep as props
 */
 
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useEffect, useContext } from 'react';
+import BooksContext from './context/books';
 import BookCreate from './components/BookCreate';
 import BookList from './components/BookList';
 
 function App() {
-  const [books, setBooks] = useState([]);
-
-  const fetchBooks = async () => {
-    const response = await axios.get('http://localhost:3001/books');
-
-    setBooks(response.data);
-  };
+  const { fetchBooks } = useContext(BooksContext);
 
   useEffect(() => {
     fetchBooks();
   }, []);
 
-  const createBook = async (title) => {
-    const response = await axios.post('http://localhost:3001/books', {
-      title,
-    });
-
-    const updatedBooks = [...books, response.data];
-
-    setBooks(updatedBooks);
-  };
-
-  const deleteBookById = async (id) => {
-    await axios.delete(`http://localhost:3001/books/${id}`);
-
-    const updatedBooks = books.filter((book) => {
-      return book.id !== id;
-    });
-
-    setBooks(updatedBooks);
-  };
-
-  const editBookById = async (id, title) => {
-    const response = await axios.put(`http://localhost:3001/books/${id}`, {
-      title,
-    });
-
-    const updatedBooks = books.map((book) => {
-      if (book.id === id) return { ...book, ...response.data };
-      return book;
-    });
-
-    setBooks(updatedBooks);
-  };
-
   return (
     <div className="app">
       <h1>Reading List</h1>
-      <BookList books={books} onDelete={deleteBookById} onEdit={editBookById} />
-      <BookCreate onCreate={createBook} />
+      <BookList />
+      <BookCreate />
     </div>
   );
 }
