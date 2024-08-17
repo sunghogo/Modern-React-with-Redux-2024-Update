@@ -10,9 +10,17 @@
             - That means DO NOT MODIFY state arrays or elements AND state objects or properties
 
     State Update Cheatsheet: https://state-updates.vercel.app/
+
+    useEffect:
+        - Function we import from React library (like useState)
+        - Used to run code when a component is initially rendered, and (sometimes) when rerendered
+        - First argument is function containing code we want to run
+        - Second is control for when that code is executed
+            - Pass [] for first render
+            - Pass nothing for always on rerender
 */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import BookCreate from './components/BookCreate';
 import BookList from './components/BookList';
@@ -25,6 +33,10 @@ function App() {
 
     setBooks(response.data);
   };
+
+  useEffect(() => {
+    fetchBooks();
+  }, []);
 
   const createBook = async (title) => {
     const response = await axios.post('http://localhost:3001/books', {
