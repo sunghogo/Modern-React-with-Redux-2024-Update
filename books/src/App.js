@@ -19,6 +19,21 @@
             - Pass [] for only the initial render
             - No argument for every rerender
             - Pass [state1, state2, etc...] for only when the specifed state(s) is changed
+
+    Context:
+        - An alternative to props to share data across many different components
+        - Context is NOT A REPLACEMENT for Props or Redux
+        - Using Context:
+            1) Create the context
+                - Import createContext from React and call it
+            2) Specify the data that will be shared
+                - Provider: Component used to specify what data we want to share
+                    - 'value' prop is special and specifies what will be shared with rest of the app
+                    - Any child component can now access data
+                - Consumer: Component used to get access to data (Not often used)
+            3) 'Consume' the data in a component
+                - Import useContext from React and also the Context Object from Step 1
+                - Call useContext(ContextObject)
 */
 
 import { useState, useEffect } from 'react';
