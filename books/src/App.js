@@ -18,7 +18,7 @@
         - Second argument is control for when that code is executed
             - Pass [] for only the initial render
             - No argument for every rerender
-            - Pass [state] for only when the specifed state is changed
+            - Pass [state1, state2, etc...] for only when the specifed state(s) is changed
 */
 
 import { useState, useEffect } from 'react';
@@ -57,9 +57,13 @@ function App() {
     setBooks(updatedBooks);
   };
 
-  const editBookById = (id, title) => {
+  const editBookById = async (id, title) => {
+    const response = await axios.put(`http://localhost:3001/books/${id}`, {
+      title,
+    });
+
     const updatedBooks = books.map((book) => {
-      if (book.id === id) return { ...book, title };
+      if (book.id === id) return { ...book, ...response.data };
       return book;
     });
 
