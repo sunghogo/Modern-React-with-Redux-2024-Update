@@ -20,6 +20,12 @@ import BookList from './components/BookList';
 function App() {
   const [books, setBooks] = useState([]);
 
+  const fetchBooks = async () => {
+    const response = await axios.get('http://localhost:3001/books');
+
+    setBooks(response.data);
+  };
+
   const createBook = async (title) => {
     const response = await axios.post('http://localhost:3001/books', {
       title,
