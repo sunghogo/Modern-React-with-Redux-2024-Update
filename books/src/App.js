@@ -13,11 +13,12 @@
 
     useEffect:
         - Function we import from React library (like useState)
-        - Used to run code when a component is initially rendered, and (sometimes) when rerendered
-        - First argument is function containing code we want to run
-        - Second is control for when that code is executed
-            - Pass [] for first render
-            - Pass nothing for always on rerender
+        - Used to run code when a component is initially rendered, and (sometimes afterwards) when rerendered
+        - First argument is (arrow) function containing code we want to run
+        - Second argument is control for when that code is executed
+            - Pass [] for only the initial render
+            - No argument for every rerender
+            - Pass [state] for only when the specifed state is changed
 */
 
 import { useState, useEffect } from 'react';
