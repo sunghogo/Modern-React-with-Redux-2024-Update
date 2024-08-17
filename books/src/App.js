@@ -19,12 +19,12 @@ function App() {
   const [books, setBooks] = useState([]);
 
   const createBook = (title) => {
-    const book = { title };
-    setBooks([...books, book]);
+    setBooks([...books, { id: 123, title }]);
   };
 
   return (
     <div>
+      {books.length}
       <BookCreate onCreate={createBook} />
     </div>
   );
