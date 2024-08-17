@@ -12,7 +12,7 @@ function BookShow({ book, onDelete }) {
     setShowEdit(!showEdit);
   };
 
-  let content = showEdit ? <BookEdit /> : <h3>{book.title}</h3>;
+  let content = showEdit ? <BookEdit book={book} /> : <h3>{book.title}</h3>;
 
   return (
     <div className="book-show">
