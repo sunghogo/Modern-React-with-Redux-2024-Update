@@ -54,6 +54,9 @@
     Custom Hooks:
         - Functions we write to make reusable bits of logic (can do little or a lot)
         - Usually reuses basic hooks
+
+    useEffect:
+        - When useEffect is run only one time, the state it references can be a stale variable since updating the state also changes the memory address of the state
 */
 
 import { useEffect } from 'react';
