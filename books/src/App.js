@@ -56,7 +56,10 @@
         - Usually reuses basic hooks
 
     useEffect:
-        - When useEffect is run only one time, the state it references can be a stale variable since updating the state also changes the memory address of the state
+        - When useEffect is run, the state it references can be a "stale variable" since updating the state also changes the memory address of the state
+            - This happens whenever useEffect contains or creates a function that refers to a variable
+        - Becareful with ESLint as blindly following it can lead to more bugs
+            - In this case, adding the function referencing the potentially stale variable to the dependency array leads to an infinite loop
 */
 
 import { useEffect } from 'react';
