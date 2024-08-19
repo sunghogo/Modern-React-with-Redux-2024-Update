@@ -67,6 +67,15 @@
             - Follows similar convention as useEffect (second argument is a dependency array)
                 - If empty array, returns original function from initial render
                 - If it has elements/states changes since last render, returns new funciton from this rerender
+    
+    useEffect Cleanup Functions:
+        - useEffect CANNOT:
+            - return a number or string
+            - use an async/await (since it returns a promise automatically)
+        - useEffect can only return another function
+            - This returned function is called at the start of the next specified rerender
+                - Useful for clean ups like removing event listeners
+                - New function is returned every time (unless useCallback?)
 */
 
 import { useEffect } from 'react';
