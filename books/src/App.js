@@ -59,7 +59,14 @@
         - When useEffect is run, the state it references can be a "stale variable" since updating the state also changes the memory address of the state
             - This happens whenever useEffect contains or creates a function that refers to a variable
         - Becareful with ESLint as blindly following it can lead to more bugs
-            - In this case, adding the function referencing the potentially stale variable to the dependency array leads to an infinite loop
+            - In this case, adding the function to the dependency array leads to an infinite loop since the function has a new memory address each time the Provider context is rerendered
+
+    useCallback:
+        - Hook to help you tell React that your function isn't actually changing over time
+            - Fixes bugs around useEffect and other similar situations (does not ever run your function)
+            - Follows similar convention as useEffect (second argument is a dependency array)
+                - If empty array, returns original function from initial render
+                - If it has elements/states changes since last render, returns new funciton from this rerender
 */
 
 import { useEffect } from 'react';
@@ -72,7 +79,7 @@ function App() {
 
   useEffect(() => {
     fetchBooks();
-  }, []);
+  }, [fetchBooks]);
 
   return (
     <div className="app">
