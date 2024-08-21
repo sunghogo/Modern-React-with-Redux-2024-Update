@@ -1,5 +1,5 @@
 /*
-    - Since functions/methods are annotated within interfaces, can rely on type inference when using those methods
+    - Since functions/methods are annotated within interfaces, can rely on type inference when defining/using those methods
 */
 
 import React from 'react';
