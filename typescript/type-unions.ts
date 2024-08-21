@@ -1,6 +1,6 @@
 /*
     - Rarely create functions that take in only one argument type at a time (polymorphic functions)
-    - Type unions allow function to take in many different types separated by '|'
+    - Type unions allow function to take in many  different types separated by '|'
 */
 
 interface Image {

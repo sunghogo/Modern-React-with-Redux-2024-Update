@@ -1,5 +1,6 @@
 /*
   - Can derived interfaces from existing interfaces through 'extends' keyword
+    - Used a lot in third party libraries
     interface DerivedInterface extends BaseInterface {
       extended properties... 
     }
