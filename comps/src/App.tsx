@@ -1,6 +1,11 @@
 /*
     - Components recreating their html element equivalent are called "wrappers", and the plain element as the "underlying element"
     - In React, anything between the opening and closing component JSX, and is automatically passed down as the "children" prop
+
+    - Passing Props 
+      - Can destructure all other unused passed props with '...rest' as a component argument
+        - Can then pass these props to underlying components using '{...rest}'
+
 */
 import Button from './Button';
 import { GoBell, GoCloudDownload, GoDatabase } from 'react-icons/go';
@@ -9,7 +14,7 @@ function App() {
   return (
     <div>
       <div>
-        <Button success rounded outline>
+        <Button className="mb-5" success rounded outline>
           <GoBell />
           Click Me!!
         </Button>
