@@ -9,22 +9,26 @@ function App() {
     <div>
       <div>
         <Button success rounded outline>
-          Click!!
+          Click Me!!
         </Button>
       </div>
       <div>
-        <Button secondary outline>
+        <Button danger outline>
           Buy Now!
         </Button>
       </div>
       <div>
-        <Button primary>See Deal!</Button>
+        <Button warning>See Deal!</Button>
       </div>
       <div>
-        <Button warning>Hide Ads!</Button>
+        <Button secondary outline>
+          Hide Ads!
+        </Button>
       </div>
       <div>
-        <Button danger>Something!</Button>
+        <Button primary rounded>
+          Something!
+        </Button>
       </div>
     </div>
   );
