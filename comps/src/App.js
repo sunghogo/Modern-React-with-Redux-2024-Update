@@ -10,6 +10,16 @@
       - Component: Reusable React component that shows a handful of element
       - Page: Still a React component but not intended to be reused
 
+    - Events + State Design Process
+      1) List out what a user will do (event handlers) and changes they weill see while using your app (state)
+      2) Categorize aech step as 'state' or 'event handler'
+      3) Group common steps. Remove duplicates. Rewrite descriptions
+      4) Look at mockup. Remove or simplify parts that aren't changing
+      5) Replace remaining elements with text descriptions
+      6) Repeat #4 and #5 with a different version
+      7) Imagine you have to write a function that returns the text of steps #5 and #6. In addition to your component props, what other arguments do you need?
+      8) Decide where each event handler + state will be defined (event handler usually defined in same component as state it modifies)
+
 */
 import Accordion from './components/Accordion';
 
