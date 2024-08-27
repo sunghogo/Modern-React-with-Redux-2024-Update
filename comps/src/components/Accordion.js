@@ -8,7 +8,13 @@ function Accordion({ items }) {
 
     return (
       <div key={item.id}>
-        <div>{item.label}</div>
+        <div
+          onClick={() =>
+            !isExpanded ? setExpandedIndex(index) : setExpandedIndex(-1)
+          }
+        >
+          {item.label}
+        </div>
         {isExpanded && <div>{item.content}</div>}
       </div>
     );
