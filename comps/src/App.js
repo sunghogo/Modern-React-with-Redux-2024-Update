@@ -20,6 +20,17 @@
       7) Imagine you have to write a function that returns the text of steps #5 and #6. In addition to your component props, what other arguments do you need?
       8) Decide where each event handler + state will be defined (event handler usually defined in same component as state it modifies)
 
+    - Delayed State Updates
+      - React queues up/"batches" state updates and processes them all at once after a certain time
+      - Can get most up-to-date state version by passing an arrow function to setter which contains the most recent state as first argument 
+      - Simple State Update:
+        - Use if new value doesn't depend on old:
+            const handler = () => { setter(10); };
+      - Function Version:
+        - Use if new value DEPENDS on old:
+            const handler = () => { setter((currentState) => { ... return currentState + 1}; ); };
+
+
 */
 import Accordion from './components/Accordion';
 
