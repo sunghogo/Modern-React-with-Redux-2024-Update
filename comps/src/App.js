@@ -30,7 +30,9 @@
         - Use if new value DEPENDS on old:
             const handler = () => { setter((currentState) => { ... return currentState + 1}; ); };
 
-
+    - "Form Control Component" naming convention for props are:
+      - "value": current state value
+      - "onChange": state handler function for dealing with user input
 */
 import { useState } from 'react';
 import Dropdown from './components/Dropdown';
@@ -48,7 +50,7 @@ function App() {
     { label: 'Blue', value: 'blue' },
   ];
   return (
-    <Dropdown options={options} selection={selection} onSelect={handleSelect} />
+    <Dropdown options={options} value={selection} onChange={handleSelect} />
   );
 }
 
